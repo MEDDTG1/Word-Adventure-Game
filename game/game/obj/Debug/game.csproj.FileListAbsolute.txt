@@ -1,0 +1,7 @@
+H:\Word-Adventure-Game\game\game\bin\Debug\game.exe.config
+H:\Word-Adventure-Game\game\game\bin\Debug\game.exe
+H:\Word-Adventure-Game\game\game\bin\Debug\game.pdb
+H:\Word-Adventure-Game\game\game\obj\Debug\game.csprojAssemblyReference.cache
+H:\Word-Adventure-Game\game\game\obj\Debug\game.csproj.CoreCompileInputs.cache
+H:\Word-Adventure-Game\game\game\obj\Debug\game.exe
+H:\Word-Adventure-Game\game\game\obj\Debug\game.pdb
