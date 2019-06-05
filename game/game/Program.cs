@@ -92,7 +92,7 @@ namespace game
         {
             levelfourAstart();
             Console.ReadLine();
-=======
+
         public static void Upstairs()
         {
             int choice;
@@ -111,15 +111,19 @@ namespace game
             switch (choice)
             {
                 case 1:
+                    leftDoor();
                     break;
 
                 case 2:
+                    middleDoor();
                     break;
 
                 case 3:
+                    rightDoor();
                     break;
 
                 case 4:
+                    ladder();
                     break;
             }
 
@@ -127,28 +131,36 @@ namespace game
 
         public static void leftDoor()
         {
+            Console.Clear();
+            Console.WriteLine("You enter the door on the left.");
 
         }
 
         public static void middleDoor()
         {
+            Console.Clear();
+            Console.WriteLine("You enter the door straight ahead.");
 
         }
 
         public static void rightDoor()
         {
+            Console.Clear();
+            Console.WriteLine("You enter the door on the right.");
 
         }
 
         public static void ladder()
         {
+            Console.Clear();
+            Console.WriteLine("You attempt to climb the ladder.");
 
         }
 
         static void Main(string[] args)
         {
             Upstairs();
->>>>>>> ec922098fc22c5a423727c917328b93d8f9003cf
+
         }
     }
 }
