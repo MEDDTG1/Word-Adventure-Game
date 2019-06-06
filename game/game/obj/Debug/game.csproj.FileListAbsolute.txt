@@ -5,3 +5,10 @@ H:\Word-Adventure-Game\game\game\obj\Debug\game.csprojAssemblyReference.cache
 H:\Word-Adventure-Game\game\game\obj\Debug\game.csproj.CoreCompileInputs.cache
 H:\Word-Adventure-Game\game\game\obj\Debug\game.exe
 H:\Word-Adventure-Game\game\game\obj\Debug\game.pdb
+C:\Users\Fynn\Word-Adventure-Game\game\game\obj\Debug\game.csprojAssemblyReference.cache
+C:\Users\Fynn\Word-Adventure-Game\game\game\obj\Debug\game.csproj.CoreCompileInputs.cache
+C:\Users\Fynn\Word-Adventure-Game\game\game\obj\Debug\game.exe
+C:\Users\Fynn\Word-Adventure-Game\game\game\obj\Debug\game.pdb
+C:\Users\Fynn\Word-Adventure-Game\game\game\bin\Debug\game.exe.config
+C:\Users\Fynn\Word-Adventure-Game\game\game\bin\Debug\game.exe
+C:\Users\Fynn\Word-Adventure-Game\game\game\bin\Debug\game.pdb
