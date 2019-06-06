@@ -9,7 +9,7 @@ namespace game
 {
     class Program
     {
-        public static int button;
+        public static int button, hands, flashlight;
 
         public static void level1()
         {
@@ -244,13 +244,13 @@ namespace game
 
         }
 
-        public static void Upstairs()
+        public static void level3()
         {
             int choice;
             Console.WriteLine("Level 3: Upstairs");
             Console.WriteLine("You arrive at the top of the stairs. There is a door to your left with a mysterious substance " +
                 "dripping from the handle, a door straight ahead with a strange sound coming from within and a door to your " +
-                "right with a white 'X' painted on it. There is also a ladder which appears to lead to the roof.");
+                "right with a white 'X' painted on it. There is also a ladder leading up to a hatch. Is there another floor above?");
             Console.WriteLine();
             Console.WriteLine("1 - Left Door");
             Console.WriteLine("2 - Middle Door");
@@ -283,7 +283,9 @@ namespace game
         public static void leftDoor()
         {
             Console.Clear();
-            Console.WriteLine("You enter the door on the left.");
+            Console.WriteLine("You approach the door on the left and open it, getting the weird substance all over your hands. It's" +
+                "incredibly slippery and somewhat cold. Gross.");
+            hands = 1;
 
         }
 
@@ -297,14 +299,32 @@ namespace game
         public static void rightDoor()
         {
             Console.Clear();
-            Console.WriteLine("You enter the door on the right.");
+            Console.WriteLine("You approach the door on the right, eyeing the ominous white 'X' and turn the knob. It's pitch black in" +
+                "here. You can't see a thing.");
 
         }
 
         public static void ladder()
         {
             Console.Clear();
-            Console.WriteLine("You attempt to climb the ladder.");
+
+            if (hands == 0)
+            {
+                Console.WriteLine("You attempt to climb the ladder.");
+            }
+
+            if (hands == 1)
+            {
+                Console.WriteLine("You attempt to climb the ladder but the weird doorknob goop on your hands causes you to lose your grip" +
+                    "and you fall back to the ground. Ouch. Maybe you should get this stuff off...");
+                Console.WriteLine();
+                Console.WriteLine("1 - Left Door");
+                Console.WriteLine("2 - Middle Door");
+                Console.WriteLine("3 - Right Door");
+                Console.WriteLine();
+                Console.Write("What now?: ");
+                
+            }
 
         }
 
