@@ -357,7 +357,7 @@ namespace game
             Console.Clear();
             int decision = 0;
             Console.WriteLine("You run a hand along the old piano, unsettling the dust. Upon hitting one of the keys the instrument" +
-                "makes a groaning sound. Huh? Something is stuck under the lid. A flashlight! But it has no batteries.");
+                "makes a groaning sound. Huh? Something is stuck under the lid. A flashlight! Nice.");
             Console.WriteLine();
             Console.WriteLine("1 - Look at the paintings");
             Console.WriteLine("2 - Look at the fish tank");
@@ -429,6 +429,13 @@ namespace game
             {
                 Console.WriteLine("You approach the door on the right, eyeing the ominous white 'X' and turn the knob. It's pitch black in" +
                 "here. You can't see a thing. Better go back and find something to light the way.");
+            }
+
+            if (flashlight == 1)
+            {
+                Console.WriteLine("You approach the door on the right, eyeing the ominous white 'X' and turn the knob. It's pitch black in" +
+                "here. You can't see a thing. Good thing you have a flashlight. *Click*. Now You can see an office-like room with filing cabinets," +
+                "an old computer and a large oak desk.");
             }
         }
 
