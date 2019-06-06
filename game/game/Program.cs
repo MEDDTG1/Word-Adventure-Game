@@ -9,12 +9,13 @@ namespace game
 {
     class Program
     {
-<<<<<<< HEAD
+
         public static int money = 0, count = 0;
-=======
+
+        public static int button, generator, lights1 = 0, stick = 0;
+
 
         public static int button, Key1, Key2 ;
-
         public static int button, hands, flashlight;
 
         public static void level1()
@@ -53,7 +54,94 @@ namespace game
         }
         public static void level1_1b()
         {
-            Console.WriteLine("You fell down the stairs and died");
+            int temp;
+            if (lights1 == 0)
+            {
+                Console.WriteLine("You take a glance around the dark room you see a light switch, what looks like a generator and some boxes");
+                Console.WriteLine(" Try to turn on the lights: 1     Turn on the generator: 2     Search the boxes: 3    Look Elsewhere: 4  ");
+            }
+            else
+            {
+                Console.WriteLine("The room is now illuminated you can clearly see the light switch, generator and the boxes now");
+                Console.WriteLine(" Try to turn on the lights: 1     Turn on the generator: 2     Search the boxes: 3    Look Elsewhere: 4  ");
+            }
+            temp = Convert.ToInt32(Console.ReadLine());
+            Thread.Sleep(100);
+            switch (temp)
+            {
+                case 1:
+                    if (generator == 0)
+                    {
+                        Console.WriteLine("There is no power");
+                        Console.ReadLine();
+                        level1_1b();
+                    }
+                    else if (lights1 == 1)
+                    {
+                        Console.WriteLine("The lights are already on");
+                        Console.ReadLine();
+                        level1_1b();
+                    }
+                    else
+                    Console.WriteLine("You turn on the lights");
+                    Console.ReadLine();
+                    lights1 = 1;
+                    level1_1b();
+                    break;
+
+                case 2:
+                    if (generator == 0)
+                    {
+                        Console.WriteLine("There is no gas");
+                        Console.ReadLine();
+                        level1_1b();
+                    }
+                    else
+                    Console.WriteLine("This is already turned on");
+                    Console.ReadLine();
+                    level1_1b();
+                    break;
+
+                case 3:
+                    level1_1boxes();
+                    Console.Clear();
+                    break;
+
+                case 4:
+                    level1_2();
+                    Console.Clear();
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input");
+                    level1_1b();
+                    Console.Clear();
+                    break;
+
+            }
+        }
+        public static void level1_1boxes()
+        {
+            if (generator == 0)
+            {
+                Console.WriteLine("You check through the boxes and find some fuel to fill the generator");
+                generator = 1;
+                level1_1b();
+                Console.ReadLine();
+
+            }
+            else if (generator == 1 && lights1 == 1)
+            {
+                Console.WriteLine("You find a long stick it might be useful");
+                stick = 1;
+                level1_1b();
+                Console.ReadLine();
+            }
+            
+        }
+
+        public static void level1_2()
+        {
+            Console.WriteLine("On the otherside of the room");
         }
 
         public static void EA_Ending()
@@ -84,7 +172,7 @@ namespace game
         }
 
 
->>>>>>> cfbcae265b4a8f0ef6e1a9058f2b219dd2ead87b
+
         public static void lvl2()
         {
             string decision;
@@ -124,10 +212,9 @@ namespace game
 
         public static void strangeDoor()
         {
-<<<<<<< HEAD
+
             Console.Clear();
-=======
->>>>>>> cfbcae265b4a8f0ef6e1a9058f2b219dd2ead87b
+
             string decision;
             Console.WriteLine("You walk up to the strange glowing door. Beside the door is a button.");
             decision = Console.ReadLine();
@@ -136,16 +223,16 @@ namespace game
                 case "button":
                     eaButton();
                     break;
-<<<<<<< HEAD
+
                 case "west":
                     lvl2();
                     break;
-=======
 
 
 
 
->>>>>>> cfbcae265b4a8f0ef6e1a9058f2b219dd2ead87b
+
+
             }
 
 
@@ -231,7 +318,6 @@ namespace game
             level4A();
         }
 
-<<<<<<< HEAD
 
 
 
@@ -246,7 +332,8 @@ namespace game
 
 
 
-=======
+
+
         public static void level4A()
         {
             string direction;
@@ -376,18 +463,18 @@ namespace game
         }
         public static void level4D()
         {
->>>>>>> cfbcae265b4a8f0ef6e1a9058f2b219dd2ead87b
+
 
 
         }
         public static void level4E()
         {
-<<<<<<< HEAD
+
             lvl2();
         }
 
         //        public static int button;
-=======
+
             string direction;
 
             Console.WriteLine("You Approch the Wooden Chest");
@@ -620,22 +707,22 @@ namespace game
 
         static void Main()
         {
-            //menu();
+            menu();
             //lvl2();
             //level1();
             //level2();
             //level3();
-            level4();
+            //level4();
             //Upstairs();
             Console.ReadLine();
->>>>>>> cfbcae265b4a8f0ef6e1a9058f2b219dd2ead87b
 
 
 
 
 
 
-<<<<<<< HEAD
+
+
         //        public static void levelfourAComplete()
         //        {
         //            Console.WriteLine("You made it out Well Done!!");
@@ -786,9 +873,9 @@ namespace game
         //            Upstairs();
 
         //        }
-=======
+
         }
->>>>>>> cfbcae265b4a8f0ef6e1a9058f2b219dd2ead87b
+
     }
 }
 
