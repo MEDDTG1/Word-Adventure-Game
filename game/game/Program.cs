@@ -249,13 +249,12 @@ namespace game
             int choice;
             Console.WriteLine("Level 3: Upstairs");
             Console.WriteLine("You arrive at the top of the stairs. There is a door to your left with a mysterious substance " +
-                "dripping from the handle, a door straight ahead with a strange sound coming from within and a door to your " +
-                "right with a white 'X' painted on it. There is also a ladder leading up to a hatch. Is there another floor above?");
+                "dripping from the handle, a door to your right with a white 'X' painted on it. There is also a ladder leading " +
+                "up to a hatch. Is there another floor above?");
             Console.WriteLine();
             Console.WriteLine("1 - Left Door");
-            Console.WriteLine("2 - Middle Door");
-            Console.WriteLine("3 - Right Door");
-            Console.WriteLine("4 - Ladder");
+            Console.WriteLine("2 - Right Door");
+            Console.WriteLine("3 - Ladder");
             Console.Write("Where are you going?: ");
             choice = Convert.ToInt32(Console.ReadLine());
 
@@ -266,14 +265,10 @@ namespace game
                     break;
 
                 case 2:
-                    middleDoor();
-                    break;
-
-                case 3:
                     rightDoor();
                     break;
 
-                case 4:
+                case 3:
                     ladder();
                     break;
             }
@@ -282,6 +277,7 @@ namespace game
 
         public static void leftDoor()
         {
+            int decision = 0;
             Console.Clear();
             Console.WriteLine("You approach the door on the left and open it, getting the weird substance all over your hands. It's" +
                 "incredibly slippery and somewhat cold. Gross.");
@@ -295,23 +291,52 @@ namespace game
             Console.WriteLine("3 - Look at the fish tank");
             Console.WriteLine("4 - Back to the main hall");
             Console.WriteLine();
-            Console.Write("What will you do?: ");
+            do
+            {
+                Console.Write("What will you do?: ");
+            } while (decision == 0);
+
+            switch (decision)
+            {
+                case 1:
+
+                    paintings();
+                    break;
+
+                case 2:
+                    Console.WriteLine("You run a hand along the old piano, unsettling the dust. Upon hitting one of the keys the instrument" +
+                        "makes a groaning sound. Huh? Something is stuck under the lid. A flashlight! But it has no batteries.");
+                    break;
+
+                case 3:
+                    Console.WriteLine("You gaze into the fish tank. It doesn't look like anything is moving in there but the grimy water" +
+                        "makes you feel like something is lurking within.");
+                    break;
+
+                case 4:
+                    level3();
+                    break;
+            }
 
         }
 
-        public static void middleDoor()
+        public static void paintings()
         {
             Console.Clear();
-            Console.WriteLine("You enter the door straight ahead.");
+            Console.WriteLine("You uncover a few of the paintings. They all appear to be by the same artist. A painting of an" +
+    "elderly woman seems to be watching your every move. They're interesting but not useful.");
+            Console.WriteLine();
 
         }
 
         public static void rightDoor()
         {
             Console.Clear();
-            Console.WriteLine("You approach the door on the right, eyeing the ominous white 'X' and turn the knob. It's pitch black in" +
-                "here. You can't see a thing.");
-
+            if (flashlight == 0)
+            {
+                Console.WriteLine("You approach the door on the right, eyeing the ominous white 'X' and turn the knob. It's pitch black in" +
+                "here. You can't see a thing. Better go back and find something to light the way.");
+            }
         }
 
         public static void ladder()
@@ -329,8 +354,7 @@ namespace game
                     "and you fall back to the ground. Ouch. Maybe you should get this stuff off...");
                 Console.WriteLine();
                 Console.WriteLine("1 - Left Door");
-                Console.WriteLine("2 - Middle Door");
-                Console.WriteLine("3 - Right Door");
+                Console.WriteLine("2 - Right Door");
                 Console.WriteLine();
                 Console.Write("What now?: ");
                 
