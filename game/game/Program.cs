@@ -9,7 +9,7 @@ namespace game
 {
     class Program
     {
-        public static int button;
+        public static int button, Key1, Key2;
 
         public static void level1()
         {
@@ -168,8 +168,15 @@ namespace game
         {
             Console.WriteLine("You made it out Well Done!!");
         }
-        
-        
+
+        public static void level4()
+        {
+            button = 0;
+            Console.WriteLine("You Have Made It To Level Four");
+            Console.WriteLine("To get to the End you must pass through the final door onto the roof!! ");
+            level4A();
+        }
+
         public static void level4A()
         {
             string direction;
@@ -198,17 +205,9 @@ namespace game
         }
 
 
-        public static void level4()
-        {
-            button = 0;
-            Console.WriteLine("You Have Made It To Level Four");
-            Console.WriteLine("To get to the End you must pass through the final door onto the roof!! ");
-            level4A();
-        }
-
         public static void level4B()
         {
-            string direction, keyone, keytwo;
+            string direction;
 
             Console.WriteLine("As you approch the Main Door You realise that there is no lock!! ");
             Console.WriteLine("What do you do?");
@@ -233,15 +232,102 @@ namespace game
 
         public static void level4C()
         {
+            string direction;
+          
+            Console.WriteLine("You Approch the First Door");
+            Console.WriteLine("w Open Wooden Door, s Back To Main Room");
+            direction = Console.ReadLine();
+            while (Key1 != 1)
+            {
+                Console.WriteLine("The Door Doesnt Move, It Is Locked");
+                Console.WriteLine("You take a step back to the center of the room");
+                level4A();
+            }
+            Console.WriteLine("You put the Wooden Key in to the Lock and BANG it opens and you enter");
 
+            Console.WriteLine("As you look into the Room you see one book shelf holding five books");
+            level4book();
+
+        }
+
+        public static void level4book()
+        {
+            string direction;
+
+            Console.WriteLine("1 Grab Book 1, 2 Grab Book 2, 3 Grab Book 3, 4 Grab Book 4, 5 Grab Book 5, s Back To Main Room");
+            direction = Console.ReadLine();
+            switch (direction)
+            {
+                case "1":
+                    Console.WriteLine("You grab the first book");
+                    Console.WriteLine("The pages are empty");
+                    Console.WriteLine("You place the book back");
+                    level4book();
+                    break;
+                case "2":
+                    Console.WriteLine("You grab the second book");
+                    Console.WriteLine("The book is stuck ");
+                    Console.WriteLine("You pull harder");
+                    Console.WriteLine("BANG");
+                    Console.WriteLine("The book slides forward and then back into place");
+                    Console.WriteLine("You hear another bang from the main room");
+                    Console.WriteLine("You rush back into the Main room to see that the Second Door is Now open");
+                    Key2 = 1;
+                    level4A();
+                    break;
+                case "3":
+                    Console.WriteLine("You grab the second book");
+                    Console.WriteLine("The book is stuck ");
+                    Console.WriteLine("You pull harder");
+                    Console.WriteLine("BANG");
+                    Console.WriteLine("The book slides forward and then back into place");
+                    Console.WriteLine("You hear another bang from the main room");
+                    Console.WriteLine("You rush back into the Main room to see that the Main doors Lock is now half open");
+                    level4A();
+                    break;
+                case "4":
+                    Console.WriteLine("You grab the fourth book");
+                    Console.WriteLine("The pages are empty");
+                    Console.WriteLine("You place the book back");
+                    level4book();
+                    break;
+                case "5":
+                    Console.WriteLine("You grab the fith book");
+                    Console.WriteLine("The pages are empty");
+                    Console.WriteLine("You place the book back");
+                    level4book();
+                    break;
+                case "s":
+                    Console.WriteLine("You take a step back into the Main room");
+                    level4A();
+                    break;
+
+            }
         }
         public static void level4D()
         {
 
+
         }
         public static void level4E()
         {
+            string direction;
 
+            Console.WriteLine("You Approch the Wooden Chest");
+            Console.WriteLine("w Open Wooden Chest, s Back To Main Room");
+            direction = Console.ReadLine();
+            if (direction == "w")
+            {
+                Console.WriteLine("As you open the Wooden Chest you find a Wooden Key!! ");
+                Key1 =  1;
+                Console.WriteLine("You take a step back to the center of the room");
+                level4A();
+            }
+            else
+            {
+                Console.WriteLine("You take a step back to the center of the room");
+                level4A();
+            }
         }
 
         public static void Upstairs()
