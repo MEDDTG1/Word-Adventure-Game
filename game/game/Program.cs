@@ -9,6 +9,8 @@ namespace game
 {
     class Program
     {
+        public static int button;
+
         public static void level1()
         {
             int temp = 0;
@@ -74,13 +76,8 @@ namespace game
                 level1();
             }
         }
-        static void Main()
-        {
-            menu();
-        //level1();
-        //level2();
-        //level3();
-        //level4();
+
+
         public static void lvl2()
         {
             string decision;
@@ -97,10 +94,10 @@ namespace game
             {
                 Console.WriteLine("You're back in the kitchen. To the west is a doorway that leads to the living room.\nTo the east is a strange door that emits a faint glow.");
             }
-            
+
             decision = Console.ReadLine();
 
-            switch(decision)
+            switch (decision)
             {
                 case "east":
                     strangeDoor();
@@ -112,14 +109,14 @@ namespace game
                     break;
                 case "knife":
                     break;
-                    
-                    
+
+
             }
         }
 
         public static void strangeDoor()
         {
-            string decision; 
+            string decision;
             Console.WriteLine("You walk up to the strange glowing door. Beside the door is a button.");
             decision = Console.ReadLine();
             switch (decision)
@@ -128,12 +125,12 @@ namespace game
                     eaButton();
                     break;
 
-                    
+
 
 
             }
 
-            
+
         }
 
         public static void eaButton()
@@ -167,67 +164,13 @@ namespace game
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        static void Main()
-        {
-            lvl2();
-        public static int button;
-       
-
-
-        public static void levelfourAComplete()
+        public static void level_5A()
         {
             Console.WriteLine("You made it out Well Done!!");
         }
-        public static void MainDoor()
-        {
-            string direction, keyone,keytwo;
-
-            Console.WriteLine("As you approch the Main Door You realise that there is no lock!! ");
-            Console.WriteLine("What do you do?");
-            Console.WriteLine("w Open Door, s Back To Main Room");
-            direction = Console.ReadLine();
-            if (button == 1 && direction == "w" )
-            {
-                levelfourAComplete();
-            }
-            else if(direction == "w")
-            {
-                Console.WriteLine("The Door Didnt Move");
-                levelfourA();
-            }
-            else
-            {
-                levelfourA();
-            }
-
-        }
-        public static void FirstDoor()
-        {
-
-        }
-        public static void SecondDoor()
-        {
-
-        }
-        public static void woodenChest()
-        {
-
-        }
-        public static void levelfourA()
+        
+        
+        public static void level4A()
         {
             string direction;
 
@@ -240,33 +183,66 @@ namespace game
             switch (direction)
             {
                 case "w":
-                    MainDoor();
+                    level4B();
                     break;
                 case "a":
-                    FirstDoor();
+                    level4C();
                     break;
                 case "d":
-                    SecondDoor();
+                    level4D();
                     break;
                 case "s":
-                    woodenChest();
+                    level4E();
                     break;
             }
         }
-        
 
-        public static void levelfourAstart()
+
+        public static void level4()
         {
             button = 0;
             Console.WriteLine("You Have Made It To Level Four");
             Console.WriteLine("To get to the End you must pass through the final door onto the roof!! ");
-            levelfourA();
+            level4A();
         }
 
-        static void Main()
+        public static void level4B()
         {
-            levelfourAstart();
-            Console.ReadLine();
+            string direction, keyone, keytwo;
+
+            Console.WriteLine("As you approch the Main Door You realise that there is no lock!! ");
+            Console.WriteLine("What do you do?");
+            Console.WriteLine("w Open Door, s Back To Main Room");
+            direction = Console.ReadLine();
+            if (button == 1 && direction == "w")
+            {
+                level4A();
+            }
+            else if (direction == "w")
+            {
+                Console.WriteLine("The Door Didnt Move");
+                Console.WriteLine("You take a step back to the center of the room");
+                level4A();
+            }
+            else
+            {
+                level4A();
+            }
+
+        }
+
+        public static void level4C()
+        {
+
+        }
+        public static void level4D()
+        {
+
+        }
+        public static void level4E()
+        {
+
+        }
 
         public static void Upstairs()
         {
@@ -332,9 +308,24 @@ namespace game
 
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-            Upstairs();
+            //menu();
+            //lvl2();
+            //level1();
+            //level2();
+            //level3();
+            level4();
+            //Upstairs();
+            Console.ReadLine();
+
+
+
+
+
+
         }
     }
 }
+
+    
