@@ -393,13 +393,11 @@ namespace game
                     break;
 
                 case 2:
-                    Console.WriteLine("You run a hand along the old piano, unsettling the dust. Upon hitting one of the keys the instrument" +
-                        "makes a groaning sound. Huh? Something is stuck under the lid. A flashlight! But it has no batteries.");
+                    piano();
                     break;
 
                 case 3:
-                    Console.WriteLine("You gaze into the fish tank. It doesn't look like anything is moving in there but the grimy water" +
-                        "makes you feel like something is lurking within.");
+                    tank();
                     break;
 
                 case 4:
@@ -411,10 +409,105 @@ namespace game
 
         public static void paintings()
         {
+            int decision = 0;
             Console.Clear();
             Console.WriteLine("You uncover a few of the paintings. They all appear to be by the same artist. A painting of an" +
     "elderly woman seems to be watching your every move. They're interesting but not useful.");
             Console.WriteLine();
+            Console.WriteLine("1 - Look at the piano");
+            Console.WriteLine("2 - Look at the fish tank");
+            Console.WriteLine("3 - Back to the main hall");
+            Console.WriteLine();
+            do
+            {
+                Console.Write("What now?: ");
+            } while (decision == 0);
+
+
+            switch (decision)
+            {
+                case 1:
+                    piano();
+                    break;
+
+                case 2:
+                    tank();
+                    break;
+
+                case 3:
+                    level3();
+                    break;
+            }
+
+        }
+
+        public static void piano()
+        {
+            Console.Clear();
+            int decision = 0;
+            Console.WriteLine("You run a hand along the old piano, unsettling the dust. Upon hitting one of the keys the instrument" +
+                "makes a groaning sound. Huh? Something is stuck under the lid. A flashlight! But it has no batteries.");
+            Console.WriteLine();
+            Console.WriteLine("1 - Look at the paintings");
+            Console.WriteLine("2 - Look at the fish tank");
+            Console.WriteLine("3 - Back to the main hall");
+            Console.WriteLine();
+            do
+            {
+                Console.Write("What now?: ");
+            } while (decision == 0);
+
+
+            switch (decision)
+            {
+                case 1:
+                    paintings();
+                    break;
+
+                case 2:
+                    tank();
+                    break;
+
+                case 3:
+                    level3();
+                    break;
+            }
+
+        }
+
+        public static void tank()
+        {
+            Console.Clear();
+            int decision = 0;
+            Console.WriteLine("You gaze into the fish tank. It doesn't look like anything is moving in there but the grimy water" +
+            "makes you feel like something is lurking within. You gotta do what you gotta do. You clean the doorknob gunk off" +
+            "of your hands. You swear you feel something brush your hand from inside the tank.");
+            hands = 0;
+            Console.WriteLine();
+            Console.WriteLine("1 - Look at the paintings");
+            Console.WriteLine("2 - Look at the piano");
+            Console.WriteLine("3 - Back to the main hall");
+            Console.WriteLine();
+            do
+            {
+                Console.Write("What now?: ");
+            } while (decision == 0);
+
+
+            switch (decision)
+            {
+                case 1:
+                    paintings();
+                    break;
+
+                case 2:
+                    piano();
+                    break;
+
+                case 3:
+                    level3();
+                    break;
+            }
 
         }
 
