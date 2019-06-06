@@ -286,6 +286,16 @@ namespace game
             Console.WriteLine("You approach the door on the left and open it, getting the weird substance all over your hands. It's" +
                 "incredibly slippery and somewhat cold. Gross.");
             hands = 1;
+            Console.WriteLine();
+            Console.WriteLine("The room itself contains a number of paintings covered up by tarps, a dusty piano and a grimy looking" +
+                "fish tank that's so cloudy you can't tell if there are any fish inside.");
+            Console.WriteLine();
+            Console.WriteLine("1 - Look at the paintings");
+            Console.WriteLine("2 - Look at the piano");
+            Console.WriteLine("3 - Look at the fish tank");
+            Console.WriteLine("4 - Back to the main hall");
+            Console.WriteLine();
+            Console.Write("What will you do?: ");
 
         }
 
