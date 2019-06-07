@@ -11,12 +11,9 @@ namespace game
     {
 
         public static int money = 0, count = 0;
-
         public static int button, generator, lights1 = 0, stick = 0;
-
-
         public static int button, Key1, Key2 ;
-        public static int button, hands, flashlight;
+        public static int button, hands = 0, flashlight = 0, hatchKey == 0;
 
         public static void level1()
         {
@@ -693,7 +690,13 @@ namespace game
         {
             Console.Clear();
 
-            if (hands == 0)
+            if (hands == 0 && hatchKey == 0)
+            {
+                Console.WriteLine("You approach the ladder and begin to climb. There is a hatch door at the top - you press it and notice" +
+                    "a small lock. Looks like you'll need to find the key. Time to head back down.");
+            }
+
+            if (hands == 0 && hatchKey == 1)
             {
                 Console.WriteLine("You attempt to climb the ladder.");
             }
