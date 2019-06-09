@@ -13,7 +13,7 @@ namespace game
         public static int money = 0, count = 0;
         public static int button, generator, lights1 = 0, stick = 0;
         public static int lever, Key1, Key2 ;
-        public static int  hands = 0, flashlight = 0, hatchKey = 0;
+        public static int  hands = 0, flashlight = 0, hatchKey = 0, deskKey = 0;
 
         public static void level1()
         {
@@ -310,6 +310,7 @@ namespace game
         public static void level4()
         {
             lever = 0;
+            Console.Clear();
             Console.WriteLine("You Have Made It To Level Four");
             Console.WriteLine("To get to the End you must pass through the final door onto the roof!! ");
             level4A();
@@ -525,10 +526,11 @@ namespace game
         public static void level3()
         {
             int choice;
+            Console.Clear();
             Console.WriteLine("Level 3: Upstairs");
             Console.WriteLine("You arrive at the top of the stairs. There is a door to your left with a mysterious substance " +
                 "dripping from the handle, a door to your right with a white 'X' painted on it. There is also a ladder leading " +
-                "up to a hatch. Is there another floor above?");
+                "up to a hatch with a shiny lock attached. Is there another floor above?");
             Console.WriteLine();
             Console.WriteLine("1 - Left Door");
             Console.WriteLine("2 - Right Door");
@@ -572,12 +574,12 @@ namespace game
             do
             {
                 Console.Write("What will you do?: ");
+                decision = Convert.ToInt32(Console.ReadLine());
             } while (decision == 0);
 
             switch (decision)
             {
                 case 1:
-
                     paintings();
                     break;
 
@@ -610,6 +612,7 @@ namespace game
             do
             {
                 Console.Write("What now?: ");
+                decision = Convert.ToInt32(Console.ReadLine());
             } while (decision == 0);
 
 
@@ -636,6 +639,9 @@ namespace game
             int decision = 0;
             Console.WriteLine("You run a hand along the old piano, unsettling the dust. Upon hitting one of the keys the instrument" +
                 "makes a groaning sound. Huh? Something is stuck under the lid. A flashlight! Nice.");
+            flashlight = 1;
+            Console.WriteLine();
+            Console.WriteLine("Flashlight acquired!");
             Console.WriteLine();
             Console.WriteLine("1 - Look at the paintings");
             Console.WriteLine("2 - Look at the fish tank");
@@ -644,6 +650,7 @@ namespace game
             do
             {
                 Console.Write("What now?: ");
+                decision = Convert.ToInt32(Console.ReadLine());
             } while (decision == 0);
 
 
@@ -673,6 +680,8 @@ namespace game
             "of your hands. You swear you feel something brush your hand from inside the tank.");
             hands = 0;
             Console.WriteLine();
+            Console.WriteLine("Your hands are now clean.");
+            Console.WriteLine();
             Console.WriteLine("1 - Look at the paintings");
             Console.WriteLine("2 - Look at the piano");
             Console.WriteLine("3 - Back to the main hall");
@@ -680,6 +689,7 @@ namespace game
             do
             {
                 Console.Write("What now?: ");
+                decision = Convert.ToInt32(Console.ReadLine());
             } while (decision == 0);
 
 
@@ -728,6 +738,7 @@ namespace game
                 do
                 {
                     Console.Write("What will you do?: ");
+                    decision = Convert.ToInt32(Console.ReadLine());
                 } while (decision == 0);
 
                 switch (decision)
@@ -753,17 +764,153 @@ namespace game
 
         public static void cabinets()
         {
+            Console.Clear();
+            int decision = 0;
+            Console.WriteLine("The filing cabinets are tall and dusty (like everything else..) You rifle around in" +
+                "them finding lots of yellowed papers and.. Oh! A key. It doesn't look like it would fit the hatch" +
+                "at the top of the ladder. What could it be for?");
+            Console.WriteLine();
+            Console.WriteLine("Small key acquired!");
+            deskKey = 1;
+            Console.WriteLine();
+            Console.WriteLine("1 - Look in the desk");
+            Console.WriteLine("2 - Look at the computer");
+            Console.WriteLine("3 - Back to the main hall");
+            Console.WriteLine();
+            do
+            {
+                Console.Write("What now?: ");
+                decision = Convert.ToInt32(Console.ReadLine());
+            } while (decision == 0);
 
+
+            switch (decision)
+            {
+                case 1:
+                    desk();
+                    break;
+
+                case 2:
+                    computer();
+                    break;
+
+                case 3:
+                    level3();
+                    break;
+            }
         }
 
         public static void desk()
         {
+            if (deskKey == 0)
+            {
+                Console.Clear();
+                int decision = 0;
+                Console.WriteLine("The desk is beautifully crafted. Surely there's something good stored inside." +
+                    "You pull at the drawer. Locked. There must be a key in here somewhere...");
+                Console.WriteLine();
+                Console.WriteLine("1 - Look at the filing cabinets");
+                Console.WriteLine("2 - Look at the computer");
+                Console.WriteLine("3 - Back to the main hall");
+                Console.WriteLine();
 
+
+                do
+                {
+                    Console.Write("What now?: ");
+                    decision = Convert.ToInt32(Console.ReadLine());
+                } while (decision == 0);
+
+
+                switch (decision)
+                {
+                    case 1:
+                        cabinets();
+                        break;
+
+                    case 2:
+                        computer();
+                        break;
+
+                    case 3:
+                        level3();
+                        break;
+                }
+            }
+
+            if (deskKey == 1)
+            {
+                Console.Clear();
+                int decision = 0;
+                Console.WriteLine("The desk is beautifully crafted. Surely there's something good in here." +
+                    "You pull at the drawer. Locked. You try the small key you found earlier. Success! The drawer" +
+                    "opens. Inside is nothing but a ornate key. So shiny, it looks brand new.");
+                Console.WriteLine();
+                Console.WriteLine("Hatch key acquired!");
+                hatchKey = 1;
+                Console.WriteLine();
+                Console.WriteLine("1 - Look at the filing cabinets");
+                Console.WriteLine("2 - Look at the computer");
+                Console.WriteLine("3 - Back to the main hall");
+                Console.WriteLine();
+
+
+                do
+                {
+                    Console.Write("What now?: ");
+                    decision = Convert.ToInt32(Console.ReadLine());
+                } while (decision == 0);
+
+
+                switch (decision)
+                {
+                    case 1:
+                        cabinets();
+                        break;
+
+                    case 2:
+                        computer();
+                        break;
+
+                    case 3:
+                        level3();
+                        break;
+                }
+            }
         }
 
         public static void computer()
         {
+            Console.Clear();
+            int decision = 0;
+            Console.WriteLine("The computer looks out of place amongst everything else, even if it is old. You" +
+                "turn it on. The only icon on the desktop is Minecraft. Maybe now isn't the time...");
+            Console.WriteLine();
+            Console.WriteLine("1 - Look at the filing cabinets");
+            Console.WriteLine("2 - Look in the desk");
+            Console.WriteLine("3 - Back to the main hall");
+            Console.WriteLine();
+            do
+            {
+                Console.Write("What now?: ");
+                decision = Convert.ToInt32(Console.ReadLine());
+            } while (decision == 0);
 
+
+            switch (decision)
+            {
+                case 1:
+                    cabinets();
+                    break;
+
+                case 2:
+                    desk();
+                    break;
+
+                case 3:
+                    level3();
+                    break;
+            }
         }
 
         public static void ladder()
@@ -772,13 +919,23 @@ namespace game
 
             if (hands == 0 && hatchKey == 0)
             {
-                Console.WriteLine("You approach the ladder and begin to climb. There is a hatch door at the top - you press it and notice" +
-                    "a small lock. Looks like you'll need to find the key. Time to head back down.");
+                Console.WriteLine("You approach the ladder and begin to climb. When you reach the hatch at the" +
+                    "top you realise you don't have a key to unlock it. Silly... Time to head back down.");
+                Console.WriteLine();
+                Console.Write("Press Enter: ");
+                Console.ReadLine();
+                level3();
             }
 
             if (hands == 0 && hatchKey == 1)
             {
-                Console.WriteLine("You attempt to climb the ladder.");
+                Console.WriteLine("You approach the ladder and climb, the key you found in the desk gripped firmly" +
+                    "in your hand. You carefully unlock the hatch and push it open, heading upwards towards your" +
+                    "next challenge.");
+                Console.WriteLine();
+                Console.Write("Press Enter: ");
+                Console.ReadLine();
+                level4();
             }
 
             if (hands == 1)
@@ -786,10 +943,9 @@ namespace game
                 Console.WriteLine("You attempt to climb the ladder but the weird doorknob goop on your hands causes you to lose your grip" +
                     "and you fall back to the ground. Ouch. Maybe you should get this stuff off...");
                 Console.WriteLine();
-                Console.WriteLine("1 - Left Door");
-                Console.WriteLine("2 - Right Door");
-                Console.WriteLine();
-                Console.Write("What now?: ");
+                Console.Write("Press Enter: ");
+                Console.ReadLine();
+                level3();
                 
             }
 
@@ -801,7 +957,7 @@ namespace game
             //lvl2();
             //level1();
             //level2();
-            //level3();
+            level3();
             level4();
             //Upstairs();
             Console.ReadLine();

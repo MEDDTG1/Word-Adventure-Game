@@ -16,3 +16,6 @@ C:\Users\Sophie\Word-Adventure-Game\game\game\obj\Debug\game.csprojAssemblyRefer
 C:\Users\Sophie\Word-Adventure-Game\game\game\obj\Debug\game.csproj.CoreCompileInputs.cache
 C:\Users\Sophie\Word-Adventure-Game\game\game\obj\Debug\game.exe
 C:\Users\Sophie\Word-Adventure-Game\game\game\obj\Debug\game.pdb
+C:\Users\Sophie\Word-Adventure-Game\game\game\bin\Debug\game.exe.config
+C:\Users\Sophie\Word-Adventure-Game\game\game\bin\Debug\game.exe
+C:\Users\Sophie\Word-Adventure-Game\game\game\bin\Debug\game.pdb
