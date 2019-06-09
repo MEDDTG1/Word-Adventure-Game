@@ -12,8 +12,8 @@ namespace game
 
         public static int money = 0, count = 0;
         public static int button, generator, lights1 = 0, stick = 0;
-        public static int button, Key1, Key2 ;
-        public static int button, hands = 0, flashlight = 0, hatchKey == 0;
+        public static int lever, Key1, Key2 ;
+        public static int  hands = 0, flashlight = 0, hatchKey = 0;
 
         public static void level1()
         {
@@ -309,7 +309,7 @@ namespace game
 
         public static void level4()
         {
-            button = 0;
+            lever = 0;
             Console.WriteLine("You Have Made It To Level Four");
             Console.WriteLine("To get to the End you must pass through the final door onto the roof!! ");
             level4A();
@@ -367,9 +367,9 @@ namespace game
             Console.WriteLine("What do you do?");
             Console.WriteLine("w Open Door, s Back To Main Room");
             direction = Console.ReadLine();
-            if (button == 1 && direction == "w")
+            if (lever == 1 && direction == "w")
             {
-                level4A();
+                level_5A();
             }
             else if (direction == "w")
             {
@@ -404,6 +404,65 @@ namespace game
 
         }
 
+        
+        public static void level4D()
+        {
+            string direction;
+
+            Console.WriteLine("You Approch the Second Door");
+            Console.WriteLine("w Open Wooden Door, s Back To Main Room");
+            direction = Console.ReadLine();
+            while (Key2 != 1)
+            {
+                Console.WriteLine("The Door Doesnt Move, It Is Locked");
+                Console.WriteLine("You take a step back to the center of the room");
+                level4A();
+            }
+            Console.WriteLine("You push the door open and look into the room");
+
+            Console.WriteLine("As you look into the Room you see a lever");
+            Console.WriteLine(" What do you do? ");
+            Console.WriteLine("w Pull Lever, s Exit room");
+            direction = Console.ReadLine();
+
+            switch (direction)
+            {
+                case "w":
+                    Console.WriteLine("You hear a Bang come from the main room");
+                    Console.WriteLine("You Rush into the Main room and see that the main door's locked has Moved");
+                    lever = 1;
+                    level4A();
+                    break;
+                case "s":
+                    Console.WriteLine("You take a step back into the Main room");
+                    level4A();
+                    break;
+            }
+
+
+
+        }
+        public static void level4E()
+        {
+            string direction;
+
+            Console.WriteLine("You Approch the Wooden Chest");
+            Console.WriteLine("w Open Wooden Chest, s Back To Main Room");
+            direction = Console.ReadLine();
+            if (direction == "w")
+            {
+                Console.WriteLine("As you open the Wooden Chest you find a Wooden Key!! ");
+                Key1 = 1;
+                Console.WriteLine("You take a step back to the center of the room");
+                level4A();
+            }
+            else
+            {
+                Console.WriteLine("You take a step back to the center of the room");
+                level4A();
+            }
+            
+        }
         public static void level4book()
         {
             string direction;
@@ -458,38 +517,10 @@ namespace game
 
             }
         }
-        public static void level4D()
-        {
-
-
-
-        }
-        public static void level4E()
-        {
-
-            lvl2();
-        }
 
         //        public static int button;
 
-            string direction;
 
-            Console.WriteLine("You Approch the Wooden Chest");
-            Console.WriteLine("w Open Wooden Chest, s Back To Main Room");
-            direction = Console.ReadLine();
-            if (direction == "w")
-            {
-                Console.WriteLine("As you open the Wooden Chest you find a Wooden Key!! ");
-                Key1 =  1;
-                Console.WriteLine("You take a step back to the center of the room");
-                level4A();
-            }
-            else
-            {
-                Console.WriteLine("You take a step back to the center of the room");
-                level4A();
-            }
-        }
 
         public static void level3()
         {
@@ -717,12 +748,12 @@ namespace game
 
         static void Main()
         {
-            menu();
+            //menu();
             //lvl2();
             //level1();
             //level2();
             //level3();
-            //level4();
+            level4();
             //Upstairs();
             Console.ReadLine();
 
