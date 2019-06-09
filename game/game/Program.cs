@@ -702,11 +702,15 @@ namespace game
 
         public static void rightDoor()
         {
+            int decision = 0;
             Console.Clear();
             if (flashlight == 0)
             {
                 Console.WriteLine("You approach the door on the right, eyeing the ominous white 'X' and turn the knob. It's pitch black in" +
                 "here. You can't see a thing. Better go back and find something to light the way.");
+                Console.Write("Press Enter: ");
+                Console.ReadLine();
+                level3();
             }
 
             if (flashlight == 1)
@@ -714,7 +718,52 @@ namespace game
                 Console.WriteLine("You approach the door on the right, eyeing the ominous white 'X' and turn the knob. It's pitch black in" +
                 "here. You can't see a thing. Good thing you have a flashlight. *Click*. Now You can see an office-like room with filing cabinets," +
                 "an old computer and a large oak desk.");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("1 - Look at the filing cabinets");
+                Console.WriteLine("2 - Look in the desk");
+                Console.WriteLine("3 - Look at the computer");
+                Console.WriteLine("4 - Back to the main hall");
+                Console.WriteLine();
+                do
+                {
+                    Console.Write("What will you do?: ");
+                } while (decision == 0);
+
+                switch (decision)
+                {
+                    case 1:
+                        cabinets();
+                        break;
+
+                    case 2:
+                        desk();
+                        break;
+
+                    case 3:
+                        computer();
+                        break;
+
+                    case 4:
+                        level3();
+                        break;
+                }
             }
+        }
+
+        public static void cabinets()
+        {
+
+        }
+
+        public static void desk()
+        {
+
+        }
+
+        public static void computer()
+        {
+
         }
 
         public static void ladder()
