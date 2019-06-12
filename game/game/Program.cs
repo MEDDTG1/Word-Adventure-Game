@@ -36,10 +36,18 @@ namespace game
         public static void level1_1a()
         {
             int temp = 0;
-            Console.WriteLine("You check the door to see that it has a sign sayging 'Pay $14.99 to unlock' What do you do");
-            Console.WriteLine(" Pay the 15 dollars: 1     Turn Around: 2");
+            Console.WriteLine("At the top of the stairs there is a door");
+            Console.WriteLine(" Open the Door: 1     Turn Around: 2");
             temp = Convert.ToInt32(Console.ReadLine());
-            if (temp == 1)
+            switch (temp)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+        }
+        if (temp == 1)
             {
                 EA_Ending();
             }
@@ -139,11 +147,6 @@ namespace game
         public static void level1_2()
         {
             Console.WriteLine("On the otherside of the room");
-        }
-
-        public static void EA_Ending()
-        {
-            Console.WriteLine("You open the door to a nice view of the bois in their car ready to hitup the KFC and scrrt down to the matukituki");
         }
         public static void menu()
         {
